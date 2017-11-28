@@ -20,6 +20,7 @@
 
 + (instancetype)manager NS_SWIFT_NAME(default());
 + (void)deallocManager;
++ (NSString *)transformAblumTitle:(NSString *)title;
 
 @property (assign, nonatomic) id<TZImagePickerControllerDelegate> pickerDelegate;
 

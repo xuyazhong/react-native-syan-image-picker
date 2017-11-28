@@ -44,6 +44,30 @@ static dispatch_once_t onceToken;
     manager = nil;
 }
 
+//智能相册的title不出意外都是英文，下面提供一个对应的中文名
++ (NSString *)transformAblumTitle:(NSString *)title {
+    if ([title isEqualToString:@"Slo-mo"]) {
+        return @"慢动作";
+    } else if ([title isEqualToString:@"Recently Added"]) {
+        return @"最近添加";
+    } else if ([title isEqualToString:@"Favorites"]) {
+        return @"最爱";
+    } else if ([title isEqualToString:@"Recently Deleted"]) {
+        return @"最近删除";
+    } else if ([title isEqualToString:@"Videos"]) {
+        return @"视频";
+    } else if ([title isEqualToString:@"All Photos"]) {
+        return @"所有照片";
+    } else if ([title isEqualToString:@"Selfies"]) {
+        return @"自拍";
+    } else if ([title isEqualToString:@"Screenshots"]) {
+        return @"屏幕快照";
+    } else if ([title isEqualToString:@"Camera Roll"]) {
+        return @"相机胶卷";
+    }
+    return title;
+}
+
 - (void)setPhotoWidth:(CGFloat)photoWidth {
     _photoWidth = photoWidth;
     TZScreenWidth = photoWidth / 2;
